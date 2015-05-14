@@ -7,3 +7,22 @@
   in order to make the encrypt/decrypt progress faster, i just use xor here, should be replaced with RC4, AES, etc. 
 
   also, the default encrypt size is 1MB, not the whole file, this is not safe
+
+* How to use
+
+  quite simple
+
+  #+BEGIN_SRC sh
+    $ file testElf 
+    testElf: ELF 32-bit LSB  executable, Intel 80386, version 1 (SYSV), statically linked, not stripped
+    $ ./simpleEncDec -b 0x33 testElf 
+    2015/05/14 20:54:36 51 1048576
+    2015/05/14 20:54:36 Successfully enc/dec, remember the sign is : 0x33
+    $ file testElf 
+    testElf: data
+    $ ./simpleEncDec -b 0x33 testElf 
+    2015/05/14 20:54:42 51 1048576
+    2015/05/14 20:54:42 Successfully enc/dec, remember the sign is : 0x33
+    $ file testElf 
+    testElf: ELF 32-bit LSB  executable, Intel 80386, version 1 (SYSV), statically linked, not stripped  
+  #+END_SRC
