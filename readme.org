@@ -1,0 +1,9 @@
+* About
+
+  a demo program to encrypt user data which will be uploaded onto skydrive
+
+* More words
+
+  in order to make the encrypt/decrypt progress faster, i just use xor here, should be replaced with RC4, AES, etc. 
+
+  also, the default encrypt size is 1MB, not the whole file, this is not safe
